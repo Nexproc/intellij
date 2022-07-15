@@ -64,7 +64,7 @@ public interface JavaClasspathAspectStrategy {
 
     private static String getAspectRepositoryOverrideFlag() {
       return String.format(
-          "--override_repository=intellij_aspect=%s", findAspectDirectory().getPath());
+          "--override_repository=intellij_aspect=%s", findAspectDirectory().getPath().replace(" ", "\ "));
     }
 
     private static File findAspectDirectory() {
